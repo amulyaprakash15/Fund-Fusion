@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your FundFusion Plan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="result-page">
+  <div class="result-container fade-in">
+    <h2>📈 Your Personalized Investment Plan</h2>
+
+    <div class="summary-section">
+      <p>👤 Age: <span id="userAge"></span></p>
+      <p>💰 Monthly Income: ₹<span id="userIncome"></span></p>
+      <p>⚠️ Risk Profile: <span id="userRisk"></span></p>
+    </div>
+
+    <div class="plan-section">
+      <h3>📊 Portfolio Allocation</h3>
+      <ul id="portfolioList">
+        <!-- Generated via JS -->
+      </ul>
+    </div>
+
+    <button onclick="window.print()" class="btn">📁 Export as PDF</button>
+  </div>
+
+  <script>
+    const age = localStorage.getItem("user_age");
+    const income = localStorage.getItem("user_income");
+    const risk = localStorage.getItem("user_risk");
+
+    document.getElementById("userAge").textContent = age;
+    document.getElementById("userIncome").textContent = income;
+    document.getElementById("userRisk").textContent = risk;
+
+    const portfolioList = document.getElementById("portfolioList");
+    let portfolio = [];
+
+    if (risk === "Low") {
+      portfolio = [
+        "70% in Debt Funds",
+        "20% in Hybrid Funds",
+        "10% in Equity Funds"
+      ];
+    } else if (risk === "Medium") {
+      portfolio = [
+        "40% in Equity Funds",
+        "40% in Hybrid Funds",
+        "20% in Debt Funds"
+      ];
+    } else {
+      portfolio = [
+        "70% in Equity Funds",
+        "20% in Hybrid Funds",
+        "10% in Debt Funds"
+      ];
+    }
+
+    portfolio.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      portfolioList.appendChild(li);
+    });
+  </script>
+</body>
+</html>

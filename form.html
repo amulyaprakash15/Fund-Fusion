@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FundFusion – Enter Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="form-page">
+  <div class="form-container fade-in">
+    <h2>🎯 Let's Personalize Your Plan</h2>
+    <form id="fundForm">
+      <label>Age:</label>
+      <input type="number" id="age" placeholder="E.g. 30" required>
+
+      <label>Monthly Income (₹):</label>
+      <input type="number" id="income" placeholder="E.g. 50000" required>
+
+      <label>Risk Appetite:</label>
+      <select id="risk">
+        <option value="Low">Low</option>
+        <option value="Medium" selected>Medium</option>
+        <option value="High">High</option>
+      </select>
+
+      <button type="submit" class="btn">Generate Plan 🚀</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("fundForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const age = document.getElementById("age").value;
+      const income = document.getElementById("income").value;
+      const risk = document.getElementById("risk").value;
+
+      localStorage.setItem("user_age", age);
+      localStorage.setItem("user_income", income);
+      localStorage.setItem("user_risk", risk);
+
+      window.location.href = "result.html";
+    });
+  </script>
+</body>
+</html>

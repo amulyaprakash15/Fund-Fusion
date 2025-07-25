@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+}
+
+.btn {
+  padding: 12px 25px;
+  background-color: #00b894;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.3s;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  background-color: #019874;
+}
+
+.hero {
+  padding: 120px 20px 60px;
+  background: linear-gradient(to right, #4b6cb7, #182848);
+  text-align: center;
+  color: white;
+}
+.hero h1 {
+  font-size: 3.2rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.features-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f0f0f0;
+}
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+.feature-card {
+  width: 300px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #eaeaea;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Form Page */
+.form-page {
+  background: linear-gradient(to right, #f8f9fa, #dceefb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.form-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  width: 400px;
+  text-align: center;
+}
+form label {
+  display: block;
+  text-align: left;
+  margin: 12px 0 5px;
+}
+form input, form select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+/* Result Page */
+.result-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+.summary-section p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.plan-section ul {
+  list-style: none;
+  padding: 0;
+}
+.plan-section li {
+  padding: 8px 0;
+  font-weight: 500;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+.delay-1 { animation-delay: 0.6s; }
+.delay-2 { animation-delay: 1.2s; }
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FundFusion - User Profile</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2 class="title">Tell Us About You</h2>
+    <form id="profileForm">
+      <label>Age:</label>
+      <input type="number" id="age" required />
+
+      <label>Annual Income (₹):</label>
+      <input type="number" id="income" required />
+
+      <label>Risk Appetite:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="risk" value="Low" required /> Low</label>
+        <label><input type="radio" name="risk" value="Medium" /> Medium</label>
+        <label><input type="radio" name="risk" value="High" /> High</label>
+      </div>
+
+      <label>Investment Horizon (in years):</label>
+      <input type="number" id="horizon" required />
+
+      <label>Investment Goal:</label>
+      <select id="goal" required>
+        <option value="">--Select--</option>
+        <option value="Retirement">Retirement</option>
+        <option value="Wealth Creation">Wealth Creation</option>
+        <option value="Child Education">Child Education</option>
+        <option value="Tax Saving">Tax Saving</option>
+      </select>
+
+      <button type="submit" class="start-button">Generate Plan</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('profileForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const age = document.getElementById('age').value;
+      const income = document.getElementById('income').value;
+      const risk = document.querySelector('input[name="risk"]:checked').value;
+      const horizon = document.getElementById('horizon').value;
+      const goal = document.getElementById('goal').value;
+
+      // Store in localStorage for use in result.html
+      localStorage.setItem('userProfile', JSON.stringify({
+        age, income, risk, horizon, goal
+      }));
+
+      window.location.href = 'result.html'; // move to results page
+    });
+  </script>
+</body>
+</html>
